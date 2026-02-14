@@ -28,15 +28,14 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
             
             <div className="space-y-8">
-              <h3 className="text-white text-[10px] font-black uppercase tracking-[0.4em] border-l-2 border-[#ea580c] pl-4">
-                About Anir
-              </h3>
-              <p className="text-sm leading-relaxed font-medium text-slate-300/80 mb-4">
-                A community-driven bridge ensuring every Mongolian scholar has the resources and mentorship required to thrive.
-              </p>
+              <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Contact Us</div>
               <div className="space-y-1">
-                <div className="text-[10px] font-black uppercase text-slate-500 tracking-widest">Architects:</div>
-                <div className="text-xs font-bold uppercase tracking-widest text-[#ea580c]">The Anir Collective</div>
+                <div className="text-[10px] font-black uppercase text-slate-500 tracking-widest">Phone Number:</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-[#ea580c]">95170927</div>
+              </div>
+              <div className="space-y-1">
+                <div className="text-[10px] font-black uppercase text-slate-500 tracking-widest">Mail:</div>
+                <div className="text-xs font-bold uppercase tracking-widest text-[#ea580c]">@gmail.com</div>
               </div>
             </div>
 
