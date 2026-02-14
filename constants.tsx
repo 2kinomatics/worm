@@ -3,7 +3,7 @@ import { GradeLevel, Resource, JournalEntry } from './types';
 
 export const TEXT = {
   navHome: "Home",
-  navLibrary: "Library",
+  navLibrary: "ᠨᠣᠮ ᠤ᠋ᠨ ᠰᠠᠩ",
   navBlog: "Blog",
   navMatch: "Match",
   navVolunteer: "Volunteer",
