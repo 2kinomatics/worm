@@ -47,7 +47,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isGuest = false
         {isHovered && (
           <div className="flex flex-col space-y-12 animate-in fade-in duration-300 w-full px-2 pt-4">
             <div className="pb-6 border-b border-slate-500/10 flex items-center gap-3">
-              <span className="text-4xl font-serif text-secondary tracking-tighter cursor-pointer" onClick={() => setView('home')}>Anir</span>
+              <span className="text-4xl font-serif text-secondary tracking-tighter cursor-pointer" onClick={() => setView('home')}>ᠠᠨᠢᠷ</span>
             </div>
             
             <nav className="flex flex-row space-x-2 items-start justify-center h-[55vh] overflow-x-auto no-scrollbar">
@@ -69,12 +69,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isGuest = false
               ))}
             </nav>
 
-            <div className="pt-10 border-t border-slate-500/10 px-4">
-              <div className="text-[10px] font-bold opacity-30 uppercase tracking-widest mb-4">Location</div>
-              <div className="vertical-script text-[10px] font-bold uppercase tracking-widest opacity-80">
-                Mongolia
-              </div>
-            </div>
+           
           </div>
         )}
       </div>
