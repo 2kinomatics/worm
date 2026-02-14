@@ -28,13 +28,13 @@ const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
             
             <div className="space-y-8">
-              <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Contact Us</div>
+              <div className="text-[20px] font-bold uppercase tracking-[0.4em] text-primary">Contact Us</div>
               <div className="space-y-1">
-                <div className="text-[10px] font-black uppercase text-slate-500 tracking-widest">Phone Number:</div>
+                <div className="text-[20px] font-black uppercase text-slate-500 tracking-widest">Phone Number:</div>
                 <div className="text-xs font-bold uppercase tracking-widest text-[#ea580c]">95170927</div>
               </div>
               <div className="space-y-1">
-                <div className="text-[10px] font-black uppercase text-slate-500 tracking-widest">Mail:</div>
+                <div className="text-[20px] font-black uppercase text-slate-500 tracking-widest">Mail:</div>
                 <div className="text-xs font-bold uppercase tracking-widest text-[#ea580c]">@gmail.com</div>
               </div>
             </div>
