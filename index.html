@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Anir | Mongolian Learning Bridge</title>
+    <link rel="manifest" href="/metadata.json">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&family=Noto+Sans+Mongolian&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ea580c;
+            --secondary: #15803d;
+            --bg: #ffffff;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-muted: #64748b;
+        }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .vertical-script {
+            font-family: 'Noto Sans Mongolian', sans-serif !important;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            display: inline-block;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+            font-weight: 600;
+        }
+        .text-primary { color: var(--primary); }
+        .bg-primary { background-color: var(--primary); }
+        .border-primary { border-color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        .bg-secondary { background-color: var(--secondary); }
+        
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        
+        .theme-transition { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .slideshow-zoom { animation: slowZoom 20s infinite alternate ease-in-out; }
+        @keyframes slowZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "date-fns": "https://esm.sh/date-fns@^4.1.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
