@@ -93,21 +93,21 @@ const Home: React.FC<HomeProps> = ({ user, progress, onNavigateToSubject }) => {
                 <Users size={32} />
               </div>
               <div className="text-5xl font-serif">12,400+</div>
-              <div className="text-xs font-bold text-muted uppercase tracking-widest">Active Scholars</div>
+              <div className="text-xs font-bold text-muted uppercase tracking-widest">Students reached</div>
             </div>
             <div className="space-y-2 group">
               <div className="p-5 bg-[var(--bg)] w-fit rounded-2xl shadow-sm text-secondary group-hover:scale-110 transition-transform">
                 <Globe size={32} />
               </div>
-              <div className="text-5xl font-serif">21 Aimags</div>
-              <div className="text-xs font-bold text-muted uppercase tracking-widest">Region Coverage</div>
+              <div className="text-5xl font-serif">All 21 Aimags</div>
+              <div className="text-xs font-bold text-muted uppercase tracking-widest">National Coverage</div>
             </div>
             <div className="space-y-2 group">
               <div className="p-5 bg-[var(--bg)] w-fit rounded-2xl shadow-sm text-primary group-hover:scale-110 transition-transform">
                 <BookOpen size={32} />
               </div>
               <div className="text-5xl font-serif">450+</div>
-              <div className="text-xs font-bold text-muted uppercase tracking-widest">Resource Modules</div>
+              <div className="text-xs font-bold text-muted uppercase tracking-widest">Tutors prepared</div>
             </div>
             <div className="space-y-2 group">
               <div className="p-5 bg-[var(--bg)] w-fit rounded-2xl shadow-sm text-secondary group-hover:scale-110 transition-transform">

@@ -40,52 +40,17 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
-            <div className="space-y-8">
-              <h3 className="text-white text-[10px] font-black uppercase tracking-[0.4em] border-l-2 border-[#ea580c] pl-4">
-                Core Values
-              </h3>
-              <ul className="text-xs space-y-4 font-black uppercase tracking-[0.2em]">
-                <li className="hover:text-white transition-colors cursor-default">01. Peer Wisdom</li>
-                <li className="hover:text-white transition-colors cursor-default">02. Verified Virtue</li>
-                <li className="hover:text-white transition-colors cursor-default">03. Steppe Access</li>
-                <li className="hover:text-white transition-colors cursor-default">04. Open Curiosity</li>
-              </ul>
-            </div>
+            
 
-            <div className="space-y-8">
-              <h3 className="text-white text-[10px] font-black uppercase tracking-[0.4em] border-l-2 border-[#ea580c] pl-4">
-                Connectivity
-              </h3>
-              <div className="text-xs space-y-4 font-bold uppercase tracking-widest">
-                <div className="text-slate-500 text-[10px]">Headquarters:</div>
-                <div>Ulaanbaatar, MN</div>
-                <div className="pt-4 text-slate-500 text-[10px]">Registry Status:</div>
-                <div className="text-[#ea580c] flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-[#ea580c] animate-pulse"></div>
-                  Operational
-                </div>
-              </div>
-            </div>
+           
 
-            <div className="space-y-8">
-              <h3 className="text-white text-[10px] font-black uppercase tracking-[0.4em] border-l-2 border-[#ea580c] pl-4">
-                Legal
-              </h3>
-              <div className="text-[10px] space-y-4 font-black uppercase tracking-[0.3em] text-slate-400">
-                <div className="hover:text-white cursor-pointer transition-colors underline decoration-slate-700 underline-offset-8">Data Privacy</div>
-                <div className="hover:text-white cursor-pointer transition-colors underline decoration-slate-700 underline-offset-8">Mentor Standards</div>
-                <div className="hover:text-white cursor-pointer transition-colors underline decoration-slate-700 underline-offset-8">Open License</div>
-              </div>
-            </div>
+            
           </div>
 
           <div className="pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
             <div className="flex items-center gap-6">
               <span className="text-5xl font-header text-white tracking-tighter uppercase">Anir</span>
-              <span className="text-[10px] font-bold uppercase tracking-widest opacity-40">© 2025 Scholar Bridge MN</span>
-            </div>
-            <div className="text-[10px] font-bold uppercase tracking-[0.5em] text-slate-500">
-              [ Knowledge is Peer to Peer ]
+              <span className="text-[10px] font-bold uppercase tracking-widest opacity-40">© 2025 </span>
             </div>
           </div>
         </div>

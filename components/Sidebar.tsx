@@ -15,7 +15,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isGuest = false
   const [isHovered, setIsHovered] = useState(false);
   
   const currentItem = NAV_ITEMS.find(item => item.id === currentView);
-  const displayTitle = currentPageTitle || TEXT[currentItem?.labelKey as keyof typeof TEXT] || 'Home';
+  const displayTitle = currentPageTitle || TEXT[currentItem?.labelKey as keyof typeof TEXT] || 'ᠠᠨᠢᠷ';
 
   const isPublicView = (viewId: string) => {
     return ['home', 'about', 'auth'].includes(viewId);
