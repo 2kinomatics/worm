@@ -33,7 +33,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isGuest = false
         {/* Collapsed State */}
         {!isHovered && (
           <div className="absolute inset-0 flex flex-col items-center py-10 justify-between">
-            <div className="font-serif text-3xl text-secondary tracking-tighter cursor-pointer" onClick={() => setView('home')}>A</div>
+            <div className="font-serif text-3xl text-secondary tracking-tighter cursor-pointer" onClick={() => setView('home')}>ᠠ</div>
             <div className="mb-24 flex items-center justify-center">
               <span className="vertical-script text-[10px] uppercase tracking-widest opacity-30">
                 {displayTitle}
