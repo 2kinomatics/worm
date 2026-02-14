@@ -191,18 +191,7 @@ const Home: React.FC<HomeProps> = ({ user, progress, onNavigateToSubject }) => {
         <aside className="w-full xl:w-[420px] shrink-0 space-y-12 xl:sticky xl:top-32">
           <ProgressCalendar completedDates={progress.completedDates} />
           
-          <div className="bg-slate-900 p-12 space-y-10 rounded-[4rem] shadow-xl relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-transparent"></div>
-            <div className="space-y-4 relative z-10">
-              <h3 className="text-4xl font-serif text-white">Peer Network</h3>
-              <p className="text-sm text-white/60 font-medium leading-relaxed">
-                Connect with verified scholars via external Google Meet sessions.
-              </p>
-            </div>
-            <button className="w-full py-6 bg-primary text-white rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-secondary transition-all relative z-10 shadow-2xl">
-              Request Mentorship
-            </button>
-          </div>
+          
         </aside>
       </div>
     </div>
