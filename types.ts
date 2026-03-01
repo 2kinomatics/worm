@@ -1,5 +1,5 @@
 
-export type AppView = 'home' | 'resources' | 'tutor-match' | 'tutor-apply' | 'settings' | 'auth' | 'profile' | 'news' | 'about';
+export type AppView = 'home' | 'resources' | 'tutor-apply' | 'settings' | 'auth' | 'profile';
 
 export enum GradeLevel {
   GRADE_7 = 'Grade 7',

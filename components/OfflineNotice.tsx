@@ -23,7 +23,7 @@ const OfflineNotice: React.FC = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-[100] bg-orange-500 text-white p-3 flex justify-center items-center gap-4 animate-in slide-in-from-top duration-300">
       <WifiOff size={16} />
-      <span className="text-[10px] font-black uppercase tracking-[0.2em]">You're currently offline. Some features might not work!</span>
+      <span className="text-[10px] font-black uppercase tracking-[0.2em]">Та одоогоор офлайн байна. Зарим функцууд ажиллахгүй байж магадгүй!</span>
     </div>
   );
 };

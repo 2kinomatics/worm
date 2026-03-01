@@ -3,22 +3,19 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import Home from './pages/Home';
 import TutorApplication from './pages/TutorApplication';
-import TutorMatch from './pages/TutorMatch';
 import Resources from './pages/Resources';
 import Profile from './pages/Profile';
-import News from './pages/News';
-import About from './pages/About';
 import Auth from './pages/Auth';
 import WordOfTheDay from './components/FactPopUp';
+import MotivationalHeart from './components/MotivationalPet';
 import Footer from './components/Footer';
-import HelpCenter from './components/HelpCenter';
 import OfflineNotice from './components/OfflineNotice';
 import { AppView, User, UserProgress, SubjectCategory } from './types';
 import { NAV_ITEMS, TEXT } from './constants';
 import { UserCircle, Sun, Moon, Coffee } from 'lucide-react';
 
 const THEMES = {
-  default: { primary: '#ea580c', secondary: '#15803d', bg: '#ffffff', text: '#1a1a1a' },
+  default: { primary: '#ea580c', secondary: '#15803d', bg: '#fffcf5', text: '#1a1a1a' },
   sepia: { primary: '#92400e', secondary: '#166534', bg: '#fffaf0', text: '#451a03' },
   dark: { primary: '#fb923c', secondary: '#4ade80', bg: '#0f172a', text: '#f8fafc' }
 };
@@ -27,7 +24,6 @@ const App: React.FC = () => {
   const [currentView, setView] = useState<AppView>('home');
   const [user, setUser] = useState<User | null>(null);
   const [resourceFilter, setResourceFilter] = useState<SubjectCategory | 'All'>('All');
-  const [isHelpOpen, setIsHelpOpen] = useState(false);
   const [theme, setTheme] = useState<'default' | 'sepia' | 'dark'>('default');
   
   const [progress] = useState<UserProgress>({
@@ -80,32 +76,26 @@ const App: React.FC = () => {
         return <Home user={currentUser} progress={progress} onNavigateToSubject={navigateToResource} />;
       case 'tutor-apply': 
         return <TutorApplication user={user} onAuthClick={() => setView('auth')} />;
-      case 'tutor-match': 
-        return <TutorMatch user={user} onAuthClick={() => setView('auth')} />;
       case 'resources': 
         return <Resources user={user} onAuthClick={() => setView('auth')} initialCategory={resourceFilter} />;
       case 'profile': 
         return <Profile user={user} progress={progress} onAuthClick={() => setView('auth')} />;
-      case 'news': 
-        return <News user={user} onAuthClick={() => setView('auth')} />;
-      case 'about': 
-        return <About />;
       case 'auth': 
         return <Auth onLogin={handleLogin} />;
       case 'settings': 
         return (
           <div className="w-full space-y-10 text-left animate-in fade-in duration-500 px-6 md:px-12">
-            <h1 className="text-6xl font-serif text-primary">Settings</h1>
+            <h1 className="text-6xl font-serif text-primary">Тохиргоо</h1>
             {user ? (
               <div className="bg-white/5 border border-slate-200/20 w-full max-w-xl space-y-8 rounded-[2rem] shadow-sm p-10 backdrop-blur-md">
                 <div className="flex justify-between items-center py-6 border-b border-slate-500/10">
-                  <span className="text-xs font-bold uppercase tracking-widest opacity-50">Scholar ID</span>
+                  <span className="text-xs font-bold uppercase tracking-widest opacity-50">Сурагчийн ID</span>
                   <span className="text-sm font-semibold">{user.id}</span>
                 </div>
-                <button onClick={handleLogout} className="w-full py-5 text-sm font-bold text-red-500 border border-red-500/20 hover:bg-red-500/10 rounded-full transition-colors mt-4">Sign Out</button>
+                <button onClick={handleLogout} className="w-full py-5 text-sm font-bold text-red-500 border border-red-500/20 hover:bg-red-500/10 rounded-full transition-colors mt-4">Гарах</button>
               </div>
             ) : (
-               <div className="text-muted font-medium italic">No active session. Please sign up to manage scholars settings.</div>
+               <div className="text-muted font-medium italic">Идэвхтэй сесс байхгүй байна. Тохиргоог удирдахын тулд бүртгүүлнэ үү.</div>
             )}
           </div>
         );
@@ -123,7 +113,7 @@ const App: React.FC = () => {
           currentView={currentView} 
           setView={setView} 
           isGuest={!user} 
-          currentPageTitle={TEXT[NAV_ITEMS.find(n => n.id === currentView)?.labelKey as keyof typeof TEXT] || 'Overview'}
+          currentPageTitle={TEXT[NAV_ITEMS.find(n => n.id === currentView)?.labelKey as keyof typeof TEXT] || 'Тойм'}
         />
         
         <main className="flex-1 transition-all duration-300 w-full flex flex-col pl-14 md:pl-16">
@@ -152,19 +142,19 @@ const App: React.FC = () => {
 
             <div className="flex items-center gap-4 md:gap-6">
               <div className="flex items-center gap-1 bg-slate-500/5 p-1 rounded-full border border-slate-500/10">
-                <button onClick={() => setTheme('default')} className={`p-2 rounded-full transition-all ${theme === 'default' ? 'bg-primary text-white shadow-md' : 'opacity-40 hover:opacity-70'}`} title="Daylight"><Sun size={14} /></button>
-                <button onClick={() => setTheme('sepia')} className={`p-2 rounded-full transition-all ${theme === 'sepia' ? 'bg-primary text-white shadow-md' : 'opacity-40 hover:opacity-70'}`} title="Comfort / Sepia"><Coffee size={14} /></button>
-                <button onClick={() => setTheme('dark')} className={`p-2 rounded-full transition-all ${theme === 'dark' ? 'bg-primary text-white shadow-md' : 'opacity-40 hover:opacity-70'}`} title="Dark Night"><Moon size={14} /></button>
+                <button onClick={() => setTheme('default')} className={`p-2 rounded-full transition-all ${theme === 'default' ? 'bg-primary text-white shadow-md' : 'opacity-40 hover:opacity-70'}`} title="Өдрийн гэрэл"><Sun size={14} /></button>
+                <button onClick={() => setTheme('sepia')} className={`p-2 rounded-full transition-all ${theme === 'sepia' ? 'bg-primary text-white shadow-md' : 'opacity-40 hover:opacity-70'}`} title="Тав тухтай / Сепиа"><Coffee size={14} /></button>
+                <button onClick={() => setTheme('dark')} className={`p-2 rounded-full transition-all ${theme === 'dark' ? 'bg-primary text-white shadow-md' : 'opacity-40 hover:opacity-70'}`} title="Харанхуй шөнө"><Moon size={14} /></button>
               </div>
 
               {user ? (
                 <div className="flex items-center gap-3 cursor-pointer group" onClick={() => setView('profile')}>
                   <div className="text-right hidden sm:block">
                     <div className="text-xs font-semibold group-hover:text-primary transition-colors">{user.name}</div>
-                    <div className="text-[8px] opacity-40 font-bold uppercase tracking-wider">Scholar</div>
+                    <div className="text-[8px] opacity-40 font-bold uppercase tracking-wider">Сурагч</div>
                   </div>
                   <div className="w-9 h-9 rounded-xl border border-slate-500/10 overflow-hidden bg-slate-500/5">
-                    <img src={`https://picsum.photos/seed/${user.id}/100`} alt="Avatar" />
+                    <img src={`https://picsum.photos/seed/${user.id}/100`} alt="Аватар" />
                   </div>
                 </div>
               ) : (
@@ -186,7 +176,7 @@ const App: React.FC = () => {
           
           <Footer />
           <WordOfTheDay />
-          <HelpCenter isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
+          <MotivationalHeart />
         </main>
       </div>
     </div>

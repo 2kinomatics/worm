@@ -15,7 +15,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isGuest = false
   const [isHovered, setIsHovered] = useState(false);
   
   const currentItem = NAV_ITEMS.find(item => item.id === currentView);
-  const displayTitle = currentPageTitle || TEXT[currentItem?.labelKey as keyof typeof TEXT] || 'ᠠᠨᠢᠷ';
+  const displayTitle = currentPageTitle || TEXT[currentItem?.labelKey as keyof typeof TEXT] || 'Home';
 
   const isPublicView = (viewId: string) => {
     return ['home', 'about', 'auth'].includes(viewId);
@@ -33,7 +33,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isGuest = false
         {/* Collapsed State */}
         {!isHovered && (
           <div className="absolute inset-0 flex flex-col items-center py-10 justify-between">
-            <div className="font-serif text-3xl text-secondary tracking-tighter cursor-pointer" onClick={() => setView('home')}>ᠠ</div>
+            <div className="font-serif text-3xl text-secondary tracking-tighter cursor-pointer" onClick={() => setView('home')}>A</div>
             <div className="mb-24 flex items-center justify-center">
               <span className="vertical-script text-[10px] uppercase tracking-widest opacity-30">
                 {displayTitle}
@@ -47,7 +47,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isGuest = false
         {isHovered && (
           <div className="flex flex-col space-y-12 animate-in fade-in duration-300 w-full px-2 pt-4">
             <div className="pb-6 border-b border-slate-500/10 flex items-center gap-3">
-              <span className="text-4xl font-serif text-secondary tracking-tighter cursor-pointer" onClick={() => setView('home')}>ᠠᠨᠢᠷ</span>
+              <span className="text-4xl font-serif text-secondary tracking-tighter cursor-pointer" onClick={() => setView('home')}>Anir</span>
             </div>
             
             <nav className="flex flex-row space-x-2 items-start justify-center h-[55vh] overflow-x-auto no-scrollbar">
@@ -69,7 +69,12 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, setView, isGuest = false
               ))}
             </nav>
 
-           
+            <div className="pt-10 border-t border-slate-500/10 px-4">
+              <div className="text-[10px] font-bold opacity-30 uppercase tracking-widest mb-4">Байршил</div>
+              <div className="vertical-script text-[10px] font-bold uppercase tracking-widest opacity-80">
+                Монгол
+              </div>
+            </div>
           </div>
         )}
       </div>

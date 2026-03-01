@@ -13,9 +13,9 @@ const TutorApplication: React.FC<TutorApplicationProps> = ({ user, onAuthClick }
   const servicePaths = [
     {
       id: 'mentor',
-      title: 'Peer Tutor',
+      title: 'Үе тэнгийн багш',
       icon: <Users size={32} />,
-      description: 'Guide Grade 7-12 scholars through academic challenges. Build community through knowledge transfer.',
+      description: '7-12-р ангийн сурагчдад сурлагын бэрхшээлийг даван туулахад нь тусална уу. Мэдлэг дамжуулах замаар нийгэмлэгийг байгуулна.',
       requirements: [
         'Subject Mastery',
         '2hr Weekly Commit',
@@ -26,9 +26,9 @@ const TutorApplication: React.FC<TutorApplicationProps> = ({ user, onAuthClick }
     },
     {
       id: 'dev',
-      title: 'Web Dev Intern',
+      title: 'Вэб хөгжүүлэгч дадлагажигч',
       icon: <Code size={32} />,
-      description: 'Scale the bridge. We need UI/UX designers, developers, and curriculum coordinators.',
+      description: 'Гүүрийг өргөжүүл. Бидэнд UI/UX дизайнер, хөгжүүлэгч, сургалтын хөтөлбөрийн зохицуулагч хэрэгтэй байна.',
       requirements: [
         'Technical Proficiency',
         'Project-Based Support',
@@ -49,13 +49,13 @@ const TutorApplication: React.FC<TutorApplicationProps> = ({ user, onAuthClick }
         <div className="space-y-4">
           <div className="flex items-center gap-3 text-primary">
             <Sparkles size={20} />
-            <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Contribute back to us</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Бидэнд хувь нэмрээ оруулна уу</span>
           </div>
           <h1 className="text-7xl font-serif text-primary tracking-tighter leading-none">{TEXT.volunteerTitle}</h1>
           <h2 className="text-5xl font-serif opacity-50 tracking-tight leading-none">{TEXT.volunteerSub}</h2>
         </div>
         <p className="text-muted text-sm font-bold uppercase tracking-[0.5em] leading-relaxed max-w-4xl">
-          Anir is a student-led initiative. Join our core staff to shape the future of Mongolian education.
+          Анир бол оюутнуудын санаачилга юм. Монголын боловсролын ирээдүйг тодорхойлоход манай үндсэн ажилтнуудтай нэгдээрэй.
         </p>
       </header>
 
@@ -68,10 +68,10 @@ const TutorApplication: React.FC<TutorApplicationProps> = ({ user, onAuthClick }
         </div>
         <div className="space-y-4 relative z-10">
           <h3 className="text-4xl md:text-6xl font-serif tracking-tight leading-none">
-            Join the hundreds.
+            Зуу зуугаараа нэгдээрэй.
           </h3>
           <p className="text-muted text-lg font-medium max-w-2xl mx-auto">
-            Our network consists of over 200 active peer tutors across 21 aimags. Be the next scholar to share your light.
+            Манай сүлжээ 21 аймгийн 200 гаруй идэвхтэй үе тэнгийн багш нараас бүрддэг. Гэрлээ хуваалцах дараагийн сурагч болоорой.
           </p>
         </div>
       </section>
@@ -89,7 +89,7 @@ const TutorApplication: React.FC<TutorApplicationProps> = ({ user, onAuthClick }
               </div>
             </div>
             <button onClick={() => handleExternalRedirect(path.link)} className="w-full py-6 mt-12 text-[10px] font-bold uppercase tracking-[0.4em] flex items-center justify-center gap-6 rounded-full shadow-2xl transition-all relative z-10 bg-slate-900 text-white hover:bg-primary">
-              Initiate Application
+              Өргөдөл гаргах
               <ExternalLink size={16} />
             </button>
           </div>
@@ -101,9 +101,9 @@ const TutorApplication: React.FC<TutorApplicationProps> = ({ user, onAuthClick }
           <Shield size={40} className="text-secondary" />
         </div>
         <div className="space-y-6">
-          <h4 className="text-3xl font-serif tracking-tight">Community Safeguard</h4>
+          <h4 className="text-3xl font-serif tracking-tight">Олон нийтийн хамгаалалт</h4>
           <p className="text-lg text-muted font-medium tracking-tight leading-relaxed max-w-4xl italic">
-            Integrity is paramount. All mentors undergo identity and competency verification.
+            Шударга байдал хамгийн чухал. Бүх зөвлөхүүд хэн болох, ур чадварын баталгаажуулалтад хамрагддаг.
           </p>
         </div>
       </section>

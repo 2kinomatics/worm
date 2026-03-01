@@ -1,16 +1,17 @@
 {
-  "name": "worm",
+  "name": "Anir | Mongolian Learning Bridge",
   "short_name": "Anir",
-  "description": "An open educational bridge for Mongolian scholars, connecting peer mentors and curated resources.",
-  "start_url": "/",
+  "description": "Монгол сурагчдад зориулсан нээлттэй боловсролын гүүр, үе тэнгийн зөвлөхүүд болон бэлтгэсэн эх сурвалжуудыг холбодог.",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#15803d",
+  "theme_color": "#ea580c",
   "icons": [
     {
       "src": "https://img.icons8.com/fluency/96/mountain.png",
       "sizes": "96x96",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "requestFramePermissions": []

@@ -28,39 +28,16 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
     e.preventDefault();
     setError('');
 
-    if (!isSignUp) {
-      setError("The Login service is currently undergoing migration. Please use the Sign Up option to create a new session.");
+    const rawPhone = formData.phone.replace('+976', '').replace(/\s/g, '');
+    const isMongolianNumber = /^[897]\d{7}$/.test(rawPhone);
+
+    if (!isMongolianNumber) {
+      setError("Зөвхөн Монгол улсын гар утасны дугаар оруулна уу (8 оронтой тоо).");
       return;
     }
 
-    const formattedPhone = formData.phone.startsWith('+976') ? formData.phone : `+976${formData.phone}`;
-
-    if (!validatePhone(formattedPhone)) {
-      setError(`Valid Mongolian number required (${MONGOLIAN_PREFIX} followed by 8 digits).`);
-      return;
-    }
-
-    if (isSignUp) {
-      if (!formData.name || !formData.age) {
-        setError("Please provide your name and age.");
-        return;
-      }
-
-      const newUser = {
-        id: `ANIR-${Math.floor(Math.random() * 10000)}`,
-        name: formData.name,
-        age: parseInt(formData.age),
-        phoneNumber: formattedPhone,
-        language: 'en',
-        isTutor: false,
-        gradeLevel: 'Grade 10'
-      };
-      
-      const existing = JSON.parse(localStorage.getItem('eb_users') || '[]');
-      localStorage.setItem('eb_users', JSON.stringify([...existing, newUser]));
-      
-      onLogin(newUser);
-    }
+    // Always show verification message as requested
+    setError("Баталгаажуулах код дугаарт илгээгдлээ");
   };
 
   return (
@@ -68,12 +45,12 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
       <div className="w-full max-w-lg bg-white/5 p-10 md:p-14 rounded-[2rem] border border-slate-500/10 shadow-2xl space-y-10 backdrop-blur-md">
         <div className="space-y-4 text-center">
           <h1 className="text-5xl font-serif text-primary tracking-tight">
-            {isSignUp ? 'Create Account' : 'Scholar Login'}
+            {isSignUp ? 'Бүртгэл үүсгэх' : 'Сурагчийн нэвтрэх'}
           </h1>
           <p className="opacity-60 text-sm font-medium">
             {isSignUp 
-              ? 'Join the Anir community with your Mongolian contact info.' 
-              : 'Our login system is currently restricted.'}
+              ? 'Монгол холбоо барих мэдээллээрээ Анир нийгэмлэгт нэгдээрэй.' 
+              : 'Манай нэвтрэх систем одоогоор хязгаарлагдмал байна.'}
           </p>
         </div>
         
@@ -95,7 +72,7 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    placeholder="Full Name"
+                    placeholder="Бүтэн нэр"
                     className="w-full pl-12 pr-4 py-4 bg-slate-500/5 border border-slate-500/10 outline-none focus:border-primary transition-all font-medium text-sm rounded-xl"
                   />
                 </div>
@@ -106,7 +83,7 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
                     required
                     value={formData.age}
                     onChange={(e) => setFormData({...formData, age: e.target.value})}
-                    placeholder="Age"
+                    placeholder="Нас"
                     className="w-full pl-12 pr-4 py-4 bg-slate-500/5 border border-slate-500/10 outline-none focus:border-primary transition-all font-medium text-sm rounded-xl"
                   />
                 </div>
@@ -121,7 +98,7 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
                 required
                 value={formData.phone.replace('+976', '')}
                 onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                placeholder="Phone Number"
+                placeholder="Утасны дугаар"
                 className="w-full pl-24 pr-4 py-4 bg-slate-500/5 border border-slate-500/10 outline-none focus:border-primary transition-all font-medium text-sm rounded-xl"
               />
             </div>
@@ -133,7 +110,7 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
                 required
                 value={formData.password}
                 onChange={(e) => setFormData({...formData, password: e.target.value})}
-                placeholder="Password"
+                placeholder="Нууц үг"
                 className="w-full pl-12 pr-4 py-4 bg-slate-500/5 border border-slate-500/10 outline-none focus:border-primary transition-all font-medium text-sm rounded-xl"
               />
             </div>
@@ -146,11 +123,11 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
                 !isSignUp ? 'bg-slate-500/20 cursor-not-allowed opacity-50' : 'bg-primary hover:bg-secondary'
               }`}
             >
-              {isSignUp ? 'Sign Up Now' : 'Sign In Disabled'}
+              {isSignUp ? 'Одоо бүртгүүлэх' : 'Нэвтрэх боломжгүй'}
             </button>
             {!isSignUp && (
               <div className="flex items-center gap-2 justify-center text-[10px] opacity-40 font-bold uppercase tracking-wider">
-                <Info size={12} /> Maintenance Mode Active
+                <Info size={12} /> Засвар үйлчилгээний горим идэвхтэй байна
               </div>
             )}
           </div>
@@ -161,7 +138,7 @@ const Auth: React.FC<AuthProps> = ({ onLogin }) => {
             onClick={() => { setIsSignUp(!isSignUp); setError(''); }}
             className="text-xs font-bold text-primary hover:underline"
           >
-            {isSignUp ? 'Already a member? Sign In' : 'New scholar? Sign Up'}
+            {isSignUp ? 'Аль хэдийн гишүүн болсон уу? Нэвтрэх' : 'Шинэ сурагч уу? Бүртгүүлэх'}
           </button>
         </div>
       </div>

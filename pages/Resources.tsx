@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { MOCK_RESOURCES, TEXT } from '../constants';
 import { SubjectCategory, User } from '../types';
-import { Search, ArrowRight, HelpCircle, FileText, BookOpen, Lock, Tag } from 'lucide-react';
+import { Search, ArrowRight, HelpCircle, FileText, BookOpen, Lock, Tag, Sparkles } from 'lucide-react';
+import AISparkGuide from '../components/AISparkGuide';
 
 interface ResourcesProps {
   user: User | null;
@@ -34,17 +35,27 @@ const Resources: React.FC<ResourcesProps> = ({ user, onAuthClick, initialCategor
     return matchesCategory && matchesSearch;
   });
 
-  const categories = ['All', 'Algebra 1', 'Geometry', 'Calculus', 'Inorganic Chemistry', 'Organic Chemistry', 'Biology', 'World History', 'Classical Literature'];
+  const categories = ['Бүгд', 'Algebra 1', 'Geometry', 'Calculus', 'Inorganic Chemistry', 'Organic Chemistry', 'Biology', 'World History', 'Classical Literature'];
   
   return (
     <div className="space-y-12 animate-in fade-in duration-500 w-full text-left pb-32 relative">
+      <AISparkGuide gradeLevel={user?.gradeLevel || 'Grade 10'} />
+
       <header className="space-y-6 border-b border-slate-500/10 pb-12 w-full">
         <div className="flex items-center gap-3 text-secondary">
           <BookOpen size={20} />
-          <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Open Knowledge Base</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.4em]">Нээлттэй мэдлэгийн сан</span>
         </div>
-        <h1 className="text-7xl font-serif text-primary tracking-tighter leading-none">{TEXT.libraryTitle}</h1>
-        <p className="text-muted font-medium max-w-4xl text-lg">{TEXT.librarySub}</p>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+          <div className="space-y-2">
+            <h1 className="text-7xl font-serif text-primary tracking-tighter leading-none">{TEXT.libraryTitle}</h1>
+            <p className="text-muted font-medium max-w-4xl text-lg">{TEXT.librarySub}</p>
+          </div>
+          <div className="bg-primary/5 p-4 rounded-2xl flex items-center gap-4 border border-primary/10">
+            <div className="p-2 bg-primary text-white rounded-lg shadow-md"><Sparkles size={16} /></div>
+            <p className="text-[10px] font-bold uppercase tracking-widest pr-4">AI Spark хөтөч идэвхтэй байна</p>
+          </div>
+        </div>
         
         <div className="relative w-full pt-8">
           <Search className="absolute left-6 top-1/2 -translate-y-1/2 opacity-30 mt-4" size={20} />
@@ -61,7 +72,7 @@ const Resources: React.FC<ResourcesProps> = ({ user, onAuthClick, initialCategor
       <div className="grid grid-cols-1 xl:grid-cols-4 gap-16 w-full">
         <aside className="space-y-12">
           <div className="space-y-6">
-            <span className="text-[10px] font-bold opacity-30 uppercase tracking-[0.5em] px-2">Focus Area</span>
+            <span className="text-[10px] font-bold opacity-30 uppercase tracking-[0.5em] px-2">Анхаарах хэсэг</span>
             <div className="flex flex-wrap md:flex-col gap-3">
               {categories.map(cat => (
                 <button
@@ -80,12 +91,12 @@ const Resources: React.FC<ResourcesProps> = ({ user, onAuthClick, initialCategor
           </div>
 
           <div className="bg-primary/5 p-10 rounded-[3rem] border border-primary/10 space-y-6">
-            <h4 className="text-sm font-bold uppercase tracking-[0.3em]">Help Needed?</h4>
+            <h4 className="text-sm font-bold uppercase tracking-[0.3em]">Тусламж хэрэгтэй юу?</h4>
             <p className="text-xs font-medium opacity-60 leading-relaxed">
-              If you can't find a specific resource, our peer mentors can help you find it or create a new summary.
+              Хэрэв та тодорхой эх сурвалж олж чадахгүй бол манай үе тэнгийн зөвлөгчид түүнийг олоход эсвэл шинэ хураангуй гаргахад туслах болно.
             </p>
             <button className="text-primary text-[10px] font-bold uppercase tracking-widest hover:underline flex items-center gap-2">
-              Talk to a Peer <ArrowRight size={14} />
+              Үе тэнгийнхэнтэйгээ ярилцах <ArrowRight size={14} />
             </button>
           </div>
         </aside>
@@ -122,7 +133,7 @@ const Resources: React.FC<ResourcesProps> = ({ user, onAuthClick, initialCategor
                 </div>
               </div>
               <div className="w-full mt-12 py-5 flex items-center justify-center gap-4 text-[10px] font-bold text-primary border-2 border-primary/10 uppercase tracking-[0.3em] group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all rounded-full shadow-lg">
-                {!user && <Lock size={12} />} Open Module <ArrowRight size={16} />
+                {!user && <Lock size={12} />} Модулийг нээх <ArrowRight size={16} />
               </div>
             </div>
           ))}
@@ -130,8 +141,8 @@ const Resources: React.FC<ResourcesProps> = ({ user, onAuthClick, initialCategor
             <div className="col-span-full py-40 text-center space-y-8 border-2 border-dashed border-slate-500/10 rounded-[4rem]">
               <Search size={64} className="mx-auto opacity-10" />
               <div className="space-y-2">
-                <p className="text-lg font-serif opacity-30">No resources matched your search.</p>
-                <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Try searching for a broad topic instead.</p>
+                <p className="text-lg font-serif opacity-30">Таны хайлтад тохирох эх сурвалж олдсонгүй.</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-primary">Үүний оронд ерөнхий сэдэв хайж үзээрэй.</p>
               </div>
             </div>
           )}

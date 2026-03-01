@@ -14,10 +14,10 @@ const Profile: React.FC<ProfileProps> = ({ user, progress, onAuthClick }) => {
   const completedResources = MOCK_RESOURCES.filter(r => r.progress === 100);
   
   const stats = [
-    { label: 'Lessons Finished', value: user ? completedResources.length : '—', icon: <CheckCircle size={18} /> },
-    { label: 'Day Streak', value: user ? '5 Days' : '—', icon: <Flame size={18} /> },
-    { label: 'Study Points', value: user ? '1,250' : '—', icon: <Trophy size={18} /> },
-    { label: 'Time Learning', value: user ? '14.5h' : '—', icon: <Clock size={18} /> },
+    { label: 'Дууссан хичээлүүд', value: user ? completedResources.length : '—', icon: <CheckCircle size={18} /> },
+    { label: 'Өдрийн дараалал', value: user ? '5 өдөр' : '—', icon: <Flame size={18} /> },
+    { label: 'Суралцах оноо', value: user ? '1,250' : '—', icon: <Trophy size={18} /> },
+    { label: 'Суралцсан хугацаа', value: user ? '14.5ц' : '—', icon: <Clock size={18} /> },
   ];
 
   return (
@@ -28,7 +28,7 @@ const Profile: React.FC<ProfileProps> = ({ user, progress, onAuthClick }) => {
         </div>
         <div className="flex-1 space-y-6">
           <div className="space-y-2">
-            <h1 className="text-5xl font-serif tracking-tight">{user ? user.name : 'Future Scholar'}</h1>
+            <h1 className="text-5xl font-serif tracking-tight">{user ? user.name : 'Ирээдүйн сурагч'}</h1>
             <p className="opacity-40 text-sm font-bold uppercase tracking-widest">{TEXT.profileSub}</p>
           </div>
         </div>
@@ -52,7 +52,7 @@ const Profile: React.FC<ProfileProps> = ({ user, progress, onAuthClick }) => {
             <Lock size={36} className="text-primary" />
             <div className="space-y-4">
               <h3 className="text-4xl font-serif tracking-tight leading-none">{TEXT.profileTitle}</h3>
-              <p className="text-muted font-medium text-[10px] leading-relaxed uppercase tracking-tight">Login required to view stats.</p>
+              <p className="text-muted font-medium text-[10px] leading-relaxed uppercase tracking-tight">Статистикийг харахын тулд нэвтрэх шаардлагатай.</p>
             </div>
             <button onClick={onAuthClick} className="px-14 py-6 bg-primary text-white rounded-full font-bold text-sm hover:bg-secondary transition-all shadow-xl flex items-center gap-4">
               {TEXT.joinButton} <ArrowRight size={20} />
